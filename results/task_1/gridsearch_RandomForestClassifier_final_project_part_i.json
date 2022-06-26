@@ -1,0 +1,12 @@
+{
+    "Estimator": "RandomForestClassifier",
+    "Number of features": 100,
+    "Best result": "0.863 +- 0.012",
+    "Best hyperparameters": {
+        "class_weight": null,
+        "criterion": "gini",
+        "max_depth": 11,
+        "max_samples": 0.66,
+        "n_estimators": 10
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "Estimator": "SVC",
+    "Number of features": 50,
+    "Best result": "0.869 +- 0.008",
+    "Best hyperparameters": {
+        "kernel": "rbf"
+    }
+}

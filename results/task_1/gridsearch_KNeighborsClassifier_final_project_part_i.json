@@ -1,0 +1,8 @@
+{
+    "Estimator": "KNeighborsClassifier",
+    "Number of features": 60,
+    "Best result": "0.861 +- 0.008",
+    "Best hyperparameters": {
+        "n_neighbors": 20
+    }
+}

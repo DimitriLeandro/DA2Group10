@@ -1,0 +1,6 @@
+{
+    "Estimator": "LinearDiscriminantAnalysis",
+    "Number of features": 90,
+    "Best result": "0.862 +- 0.009",
+    "Best hyperparameters": {}
+}

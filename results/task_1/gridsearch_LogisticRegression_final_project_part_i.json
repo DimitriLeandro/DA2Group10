@@ -1,0 +1,11 @@
+{
+    "Estimator": "LogisticRegression",
+    "Number of features": 80,
+    "Best result": "0.873 +- 0.007",
+    "Best hyperparameters": {
+        "C": 1,
+        "l1_ratio": 0.5,
+        "penalty": "elasticnet",
+        "solver": "saga"
+    }
+}
