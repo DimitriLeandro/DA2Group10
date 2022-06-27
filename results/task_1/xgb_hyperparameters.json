@@ -1,0 +1,17 @@
+{
+    "num_parallel_tree": 25,
+    "max_depth": 12,
+    "eta": 0.25,
+    "subsample": 0.75,
+    "colsample_bytree": 0.75,
+    "colsample_bylevel": 1,
+    "colsample_bynode": 1,
+    "gamma": 0,
+    "alpha": 0,
+    "lambda": 0,
+    "sampling_method": "gradient_based",
+    "tree_method": "gpu_hist",
+    "predictor": "gpu_predictor",
+    "num_class": 20,
+    "objective": "multi:softmax"
+}
