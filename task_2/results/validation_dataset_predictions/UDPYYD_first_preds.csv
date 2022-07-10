@@ -1,0 +1,4 @@
+,label,y_target,x_target,y_upper_left,x_upper_left,y_lower_right,x_lower_right
+0,Highway,4608,1024,4480,896,4736,1152
+1,Industrial,6528,7552,6400,7424,6656,7680
+2,Industrial,6656,7552,6528,7424,6784,7680
