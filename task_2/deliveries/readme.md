@@ -42,27 +42,22 @@ Para rodar este algoritmo, é necessário fornecer argumentos na linha de comand
 
 		python3 predict_images.py imgs_path path_to_save_csvs path_to_model plot_predictions
 
-		imgs_path (str)			-> 	Absolute path to folder containing PNG images to be predicted. 
-									Default is the same path this python file is located.
+		imgs_path (str): Absolute path to folder containing PNG images to be predicted. Default is the same path this python file is located.
 		
-		path_to_save_csvs (str)	->	Absolute path where to save the output CSVs. 
-									Default is the same as imgs_path.
+		path_to_save_csvs (str): Absolute path where to save the output CSVs. Default is the same as imgs_path.
 		
-		path_to_model (str)		->	Absolute path to model checkpoint (suffix .pt).
-									Default is the same path this python file is located
-									plus model_ckpt.pt.
+		path_to_model (str): Absolute path to model checkpoint (suffix .pt). Default is the same path this python file is located plus model_ckpt.pt.
 		
-		plot_predictions (int)	->	Whether to plot images with predictions or not. 
-									This value must be 0 (default) or 1. 
+		plot_predictions (int): Whether to plot images with predictions or not. This value must be 0 (default) or 1. Setting this arg to 1 will save PNG images in path_to_save_csvs containing blue squares around the predictions. The default was set to 0 because the task directives didn't ask for this, but we strongly recommend setting this to 1 to have a look at the predictions in the end (because it's cool :D).
 
 	Exemple:
 
-			python3 
-			predict_images.py 
-			/home/dimi/validation_data/02_validation_data_images/
-			/home/dimi/validation_data/02_validation_data_images/csv_results/ 
-			/home/dimi/DA2Group10/task_2/results/model_checkpoints/model_checkpoint_all_layers_round_5-v1.pt 
-			1
+		python3 
+		predict_images.py 
+		/home/dimi/validation_data/02_validation_data_images/
+		/home/dimi/validation_data/02_validation_data_images/csv_results/ 
+		/home/dimi/DA2Group10/task_2/results/model_checkpoints/model_ckpt.pt
+		1
 
 ### model.zip
 
