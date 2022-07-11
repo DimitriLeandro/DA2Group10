@@ -24,5 +24,23 @@ A fim de realizar predições nas imagens de validação fornecidas (8000x8000 p
 
 ### Files explanation
 
-hello world
+##### model.zip
+
+aaa
+
+#### model.zip
+
+aaa
+
+#### model.zip
+
+aaa
+
+#### model.zip
+
+aaa
+
+#### model.zip
+
+aaa
 
