@@ -48,33 +48,35 @@ from torchvision.transforms.transforms import Resize
 # defining function to get args or set defaults
 def get_args():
 
+	print('')
+
 	# imgs_path
 	try:
 		imgs_path = Path(r'{}'.format(sys.argv[1]))
 	except:
 		imgs_path = Path(__file__).resolve().parent
-		print('\nCouldnt find imgs_path in sys.argv[1]. Using default:', imgs_path)
+		print('Couldnt find imgs_path in sys.argv[1]. Using default:', imgs_path)
 	
 	# path_to_save_csvs
 	try:
 		path_to_save_csvs = Path(r'{}'.format(sys.argv[2]))
 	except:
 		path_to_save_csvs = imgs_path
-		print('\nCouldnt find path_to_save_csvs (str) in sys.argv[2]. Using default:', path_to_save_csvs)
+		print('Couldnt find path_to_save_csvs (str) in sys.argv[2]. Using default:', path_to_save_csvs)
 
 	# path_to_model
 	try:
 		path_to_model = Path(r'{}'.format(sys.argv[3]))
 	except:
 		path_to_model = Path(__file__).resolve().parent.joinpath('model_ckpt.pt')
-		print('\nCouldnt find path_to_model (str) in sys.argv[3]. Using default:', path_to_model)
+		print('Couldnt find path_to_model (str) in sys.argv[3]. Using default:', path_to_model)
 
 	# plot_predictions
 	try:
 		plot_predictions = int(sys.argv[4])
 	except:
 		plot_predictions = 0
-		print('\nCouldnt find plot_predictions (int) in sys.argv[4]. Using default:', plot_predictions)
+		print('Couldnt find plot_predictions (int) in sys.argv[4]. Using default:', plot_predictions)
 
 	assert imgs_path.is_dir(), 'Couldnt find imgs_path'
 	assert path_to_save_csvs.is_dir(), 'Couldnt find path_to_save_csvs'
@@ -312,14 +314,14 @@ if __name__ == "__main__":
 		df_pred_coordinates = get_final_coordinates(df_pred_coordinates, increase_final, max_size_y, max_size_x)
 
 		# deleting columns y_target and x_target + saving CSV file
-		path_to_csv = path_to_save_csvs.joinpath(img_path.name[:-4] + '.csv')
+		path_to_csv = path_to_save_csvs.joinpath(img_path.name[:-4] + '_prediction.csv')
 		df_pred_coordinates.drop(['y_target', 'x_target'], axis=1, inplace=True)
 		df_pred_coordinates.to_csv(path_to_csv, index=False)
 		print('CSV stored at:', path_to_csv)
 
 		# saving image with predictions squares
 		if plot_predictions:
-			draw_predictions(img, df_pred_coordinates, path_to_save_csvs, img_path.name, 'predictions', channel=2, border=15)
+			draw_predictions(img, df_pred_coordinates, path_to_save_csvs, img_path.name, 'prediction', channel=2, border=15)
 
 	# if no PNG was found
 	if img_count == 0:
