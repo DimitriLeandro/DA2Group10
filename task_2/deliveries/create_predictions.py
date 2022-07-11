@@ -1,5 +1,5 @@
 '''
-	predict_images.py
+	create_predictions.py
 	Data Analytics 2 - WWU
 	Dimitri Silva
 
