@@ -2,6 +2,7 @@
 	create_predictions.py
 	Data Analytics 2 - WWU
 	Dimitri Silva
+	Simon Leroy
 
 	args:
 		imgs_path (str)			-> 	Absolute path to folder containing PNG images to be predicted. 
