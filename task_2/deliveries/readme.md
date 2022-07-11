@@ -9,17 +9,17 @@ Group 10
 
 ## Introduction
 
-In the final part of this project, we employ techniques related to the design of convolutional neural networks in order to identify sunspots, pools, lakes, and trampolines in satellite images.
+In the final part of this project, we employ techniques related to the design of convolutional neural networks in order to identify solar panels, pools, ponds, and trampolines in satellite images.
 
-Initially, we believed that pre-trained models with satellite images would be the most suitable to develop this task. In this sense, we searched for pre-trained models on the internet and find the Satallighte library, which already had two pre-trained models with images from the EuroSat dataset, with 27000 samples divided into 10 classes: Annual Crop, Forest, Herbaceous Vegetation, Highway, Industrial, Pasture, Permanent Crop, Residential, River, SeaLake. Furthermore, these images were presented in 240x240 pixels, very close to the 256x256 format of the given images in the training dataset prepared for this task.
+Initially, we believed that pre-trained models with satellite images would be the most suitable to develop this task. In this sense, we searched for pre-trained models on the internet and found the Satallighte library, which already had two pre-trained models with images from the EuroSat dataset, having 27000 samples divided into 10 classes: Annual Crop, Forest, Herbaceous Vegetation, Highway, Industrial, Pasture, Permanent Crop, Residential, River, SeaLake. Furthermore, these images were presented in 240x240 pixels, very similar to the 256x256 format of the given images in the training dataset prepared for this task.
 
-The chosen model, named MobileNetV2, contains about 2.2 million parameters, with several convolutional, dropout, and batch normalization layers. The Satellighte library was developed using PyTorch and its name is a mixture of the words Satellite and Lightning (from the Pytoch Lightning package).
+The chosen model, named MobileNetV2, contains about 2.2 million parameters, with several convolutional, dropout, and batch normalization layers. The Satellighte library was developed using PyTorch and its name is a mixture of the words Satellite and Light, and its purpose is to establish a light structure to classify satellite images.
 
-We also used the unlabeled images to train the model. We divided these images into 256x256 windows with 50% overlap to label and use them to fit the model. The dense layers were replaced by a new one in order to fit 5 classes instead of 10. From that, the weights prior to the dense layers were frozen, so that, the weights of the dense layers were adjusted. Afterward, we unfroze all the network parameters and fine-tuned them all. After reaching convergence, we stored the model in a .pt file (exclusive to PyTorch). The procedures described were developed in Google Colab in order to have the model loaded on GPUs and reduce the processing time.
+We also used the unlabeled images to train the model. We divided these images into 256x256 windows with 50% overlap to label and use them to fit the model. The dense layers were replaced by a new one in order to fit 5 classes instead of 10. From that, the weights prior to the dense layers were frozen, so that, only the dense layers parameters were adjusted. Afterward, we unfroze all the network parameters and fine-tuned them all. After reaching convergence, we stored the model in a .pt file (exclusive to PyTorch). The procedures described were developed in Google Colab in order to have the model loaded on GPUs and reduce the processing time.
 
 ![Coudn't display image final_prediction_exemple.png!](final_prediction_exemple.png "")
 
-In order to make predictions on the provided validation images (8000x8000 pixels), we used windowing at 256x256 size and with 50% overlap. Finally, to determine the coordinates of a prediction, we calculate the intersection of the predictions of a single object, as shown in the image above. 
+In order to make predictions on the provided validation images (8000x8000 pixels), we used sliding windows of 256x256 size and 50% overlap. Finally, to determine the coordinates of a prediction, we calculate the intersection of the predictions of a single object, as shown in the image above. 
 
 Reference to Satellighte Docs: https://satellighte.readthedocs.io/en/latest/
 
